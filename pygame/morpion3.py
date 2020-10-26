@@ -182,7 +182,6 @@ def game():
      
      background=[0,0,0,0,0,0,0,0,0]
      caseVide = {1:(40,360),2:(236,360),3:(435,360),4:(40,183),5:(236,183),6:(435,183),7:(40,15),8:(236,15),9:(435,15)}
-     caseForcing = {1:(40,360),2:(236,360),3:(435,360),4:(40,183),5:(236,183),6:(435,183),7:(40,15),8:(236,15),9:(435,15)}
      J1 = 1
      case = 0
      
@@ -343,15 +342,32 @@ def game():
                background[choice_IA -1] = 2
                J1 = 1
 
-             elif choice_IA != 100:
-               AI_joue(caseForcing[choice_IA])
-               background[choice_IA -1] = 2
-               J1 = 1 
+
              else:
                if background[4] == 0:
                  AI_joue(caseVide[5])
                  del caseVide[5]
                  background[4] = 2
+                 J1 = 1
+               elif background[6] == 0:
+                 AI_joue(caseVide[7])
+                 del caseVide[7]
+                 background[6] = 2
+                 J1 = 1
+               elif background[0] == 0:
+                 AI_joue(caseVide[1])
+                 del caseVide[1]
+                 background[0] = 2
+                 J1 = 1
+               elif background[2] == 0:
+                 AI_joue(caseVide[3])
+                 del caseVide[3]
+                 background[2] = 2
+                 J1 = 1
+               elif background[8] == 0:
+                 AI_joue(caseVide[9])
+                 del caseVide[9]
+                 background[8] = 2
                  J1 = 1	
                else:		
                  AI_choice = random.choice(list(caseVide.keys()))
